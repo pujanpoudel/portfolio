@@ -1,5 +1,7 @@
 /*===== GOOGLE FONTS =====*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arizonia:wght@400;600;700&display=swap");
+
 /*===== VARIABLES CSS =====*/
 :root {
   --header-height: 3rem;
@@ -154,9 +156,7 @@ img {
   background-color: var(--first-color);
 }
 .nav__logo {
-  font-family: 'Unicorn Confetti';
-  src: url('../fonts/Unicorn_Confetti.ttf') format('ttf');
-  color: var(--second-color);
+  font-family: 'Arizonia';font-size: 35px;  color: var(--second-color);
 }
 .nav__toggle {
   color: var(--second-color);
@@ -336,6 +336,7 @@ img {
   margin-bottom: var(--mb-4);
 }
 .contact__button {
+  align-items: center;
   display: block;
   border: none;
   outline: none;
