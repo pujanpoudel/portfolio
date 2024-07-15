@@ -201,13 +201,21 @@ img {
   flex-direction: column;
 }
 .home__social-icon {
-  width: max-content;
-  margin-bottom: var(--mb-2);
-  font-size: 1.5rem;
-  color: var(--second-color);
+  color: #000; 
+  font-size: 2rem;
+  margin: 0 0.5rem;
+  transition: color 0.3s ease;
 }
+
 .home__social-icon:hover {
-  color: var(--first-color);
+  color: #2196f3; 
+}
+body.dark-mode .home__social-icon {
+  color: #fff; 
+}
+
+body.dark-mode .home__social-icon:hover {
+  color: #2196f3; 
 }
 .home__img {
   position: absolute;
@@ -485,5 +493,130 @@ img {
   }
   .home__img {
     width: 450px;
+  }
+}
+
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+  margin-left: 1rem;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(75, 73, 74);
+  transition: 0.4s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 20px;
+  left: 0.3em;
+  bottom: 0.3em;
+  background-color: black;
+  box-shadow: inset 8px -4px 0 0 white;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(1.5em);
+  background-color: yellow;
+  box-shadow: none;
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.dark-mode .nav {
+  background-color: #1f1f1f;
+}
+
+.dark-mode .nav__logo, 
+.dark-mode .nav__link, 
+.dark-mode .footer__title, 
+.dark-mode .footer__copy {
+  color: #ffffff;
+}
+
+.dark-mode .nav__link.active-link {
+  color: #2196f3;
+}
+
+.dark-mode .nav__link:hover {
+  color: #2196f3;
+}
+
+.dark-mode .contact__input {
+  background-color: #1f1f1f;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
+
+.dark-mode .button,
+.dark-mode .contact__button {
+  background-color: #2196f3;
+  color: #ffffff;
+  border: 1px solid #2196f3;
+}
+
+.dark-mode .footer {
+  background-color: #1f1f1f;
+}
+
+.dark-mode .home__title-color {
+  color: #2196f3;
+}
+
+@media (min-width: 768px) {
+  .nav__menu {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .switch {
+    margin-left: 2rem; 
+  }
+
+  .contact__container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .contact__form {
+    width: 45%;
   }
 }

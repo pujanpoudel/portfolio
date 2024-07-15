@@ -51,6 +51,26 @@ const sr = ScrollReveal({
 //     reset: true
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleSwitch = document.getElementById('dark-mode-toggle');
+    const currentTheme = localStorage.getItem('theme');
+
+    if (currentTheme) {
+        document.body.classList.toggle('dark-mode', currentTheme === 'dark');
+        toggleSwitch.checked = currentTheme === 'dark';
+    }
+
+    toggleSwitch.addEventListener('change', () => {
+        document.body.classList.toggle('dark-mode');
+        let theme = 'light';
+        if (document.body.classList.contains('dark-mode')) {
+            theme = 'dark';
+        }
+        localStorage.setItem('theme', theme);
+    });
+});
+
+
 sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{}); 
 sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 200}); 
 sr.reveal('.home__social-icon',{ interval: 100}); 
